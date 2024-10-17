@@ -1,0 +1,131 @@
+/* Remover borda e cor padrão do botão */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #fff !important; /* Mantém a cor branca se necessário */
+    background: transparent; /* Se desejar que o fundo seja transparente */
+}
+
+/* Remover outline e box-shadow no estado de foco */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+header p, 
+#about p{
+    text-align: justify;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 1;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.7), rgba(0,0,0,0)), url(img/bg-junior.jpeg) no-repeat;
+    background-size: cover;
+    background-position: top;
+    filter: grayscale(100%) brightness(50%); 
+    z-index: -1;
+}
+
+header p {
+    font-size: 1rem;    
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer p{
+    color: #fff;
+}
+
+.whats{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-size: 35px;
+    
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+    z-index: 9990;
+    font-size: 60px;
+}
+
+.arrow-up i,
+.whats i{
+    color: green
+}
+
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    /* Ajustar o header */
+    .row {
+        height: auto; /* Remove a altura fixa */
+        justify-content: flex-start; /* Alinha o conteúdo para o topo */
+        padding-top: 0px; /* Espaço acima do conteúdo */
+        padding-bottom: 100px; /* Espaço abaixo para evitar sobreposição */
+    }
+
+    /* Ajustar o posicionamento dos ícones fixos */
+    .whats {
+        bottom: 20px; /* Reduz a distância do fundo */
+        right: 20px; /* Reduz a distância da direita */
+    }
+
+    .arrow-up {
+        bottom: 20px; /* Reduz a distância do fundo */
+        left: 20px; /* Reduz a distância da esquerda */
+    }
+
+    /* Reduzir o tamanho dos ícones para dispositivos móveis */
+    .whats img {
+        width: 40px; /* Tamanho menor para WhatsApp */
+    }
+
+    .arrow-up i {
+        font-size: 30px; /* Tamanho menor para a seta */
+    }
+
+    /* Opcional: Ajustar o alinhamento do conteúdo dentro do header */
+    header .container .row .col-12.col-lg-6 {
+        padding-right: 15px; /* Reduz padding se necessário */
+        padding-left: 15px; /* Reduz padding se necessário */
+    }
+}
+
+
+
